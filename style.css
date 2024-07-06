@@ -2,10 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-   --color-white: hsl(252, 30%, 100%);
-   --color-light: hsl(252, 30%, 95%);
-   --color-gray: hsl(252, 15%, 65%);
-   --color-primary: hsl(0, 75%, 65%);
+    --primary-color-hue: 252;
+    --dark-color-lightness: 17%;
+    --light-color-lightness: 95%;
+    --white-color-lightness: 100%;
+
+
+   --color-white: hsl(252, 30%, var(--white-color-lightness));
+   --color-light: hsl(252, 30%, var(--light-color-lightness));
+   --color-gray: hsl(var(--primary-color-hue), 15%, 65%);
+   --color-primary: hsl(var(--primary-color-hue), 75%, 65%);
    --color-secondary: hsl(252, 100%, 90%);
    --color-success: hsl(120, 95%, 65%);
    --color-danger: hsl(0, 95%, 65%);
@@ -250,12 +256,7 @@ main .container .left .profile {
 }
 
 /************ NOTIFICATION POPUP **************/
-/**
 
-8870949502 -> selvam -> 3000
-
-
-**/
 .left .notifications-popup { 
     position: absolute;
     left: 110%;
@@ -579,7 +580,7 @@ main .container .right {
     place-items: center;
     font-size: 0.9rem;
     display: none;
-   
+    
 }
 
 .customize-theme .card {
@@ -587,6 +588,7 @@ main .container .right {
     padding: 3rem;
     border-radius: var(--card-border-radius);
     width: 50%;
+    box-shadow: 0 0 1rem var(--color-primary);  
 }
 
 /************* FONT SIZE*****************/
@@ -753,6 +755,10 @@ main .container .right {
     .left .btn {
         display: none;
     }
+
+    .customize-theme .card {
+        width: 80vw;
+    }
 }
 
 /**** MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES 
@@ -791,6 +797,10 @@ main .container .right {
 
     main .container .right {
         display: none;
+    }
+
+    .customize-theme .card {
+        width: 92vw;
     }
 }
 
